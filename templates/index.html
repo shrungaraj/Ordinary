@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ordinatoor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Ordinatoor</h1>
+        <form method="POST" action="/remove_background" enctype="multipart/form-data">
+            <label for="image-upload" class="custom-file-upload">
+                <input type="file" name="image" id="image-upload" accept="image/*">
+                Select Image
+            </label>
+            <button type="submit" class="remove-button">Make my PFP BTC worthy</button>
+        </form>
+        {% if error %}
+        <p class="error-message">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
